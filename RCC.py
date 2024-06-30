@@ -13,12 +13,15 @@ searchYear = [109]
 searchSeason = [1, 2, 3, 4]
 data_list = []
 counter = 0
+percentage = 0
+money = 0
 
 
 driver = webdriver.Chrome()
 driver.get("https://mops.twse.com.tw/mops/web/t164sb03")
 
 for k in range(len(searchCompany)):
+    companyList = {}
     textInput = driver.find_element("id", "co_id")
     textInput.send_keys(searchCompany[k])
     selection = Select(driver.find_element("id", "isnew"))
@@ -38,16 +41,17 @@ for k in range(len(searchCompany)):
             if len(elements) >= 90:
                 for i in range(40, len(elements)):
                     if counter > 0:
-                        data_list.append(elements[i].text)
+                        if counter == 2:
+                            money = elements[i].text
+                        elif counter == 1:
+                            percentage = elements[i].text
+                            companyList[f"{searchYear[j]}year {searchSeason[m]}season"] : [money, percentage]
                         counter -= 1
                     if elements[i].text == "合約負債－流動":
                         print(f"Start from {i}")
-                        if m != 4:    
-                            counter = 6
-                        else :
-                            counter = 4
+                        counter = 2
             else:
                 print(f"Warning: Expected at least 90 elements, but got {len(elements)}")
-
+    data_list.append(companyList)
 print(data_list)
 driver.quit()
