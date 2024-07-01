@@ -46,19 +46,11 @@ for k in range(len(market)):
     if (len(oddElements) >= 4):
         for i in range(len(oddElements)):
             if counter == 2:
-                if n >=10:
-                    document.write(f"\t公司名稱: {oddElements[i].text}\n")
-                    counter -= 1
-                else:
-                    document.write(f"\t公司名稱: {oddElements[i].text}\n")
-                    counter -= 1
+                document.write(f"    公司名稱: {oddElements[i].text}\n")
+                counter -= 1
             elif counter == 1:
-                if n >= 10:
-                    document.write(f"\t審核日期: {oddElements[i].text}\n\n")
-                    counter -= 1
-                else:
-                    document.write(f"\t審核日期: {oddElements[i].text}\n\n")
-                    counter -= 1
+                document.write(f"    審核日期: {oddElements[i].text}\n\n")
+                counter -= 1
             elif regularExpression(oddElements[i].text):
                 if(check(oddElements[i].text)):
                     if n >= 10:
@@ -82,18 +74,11 @@ for k in range(len(market)):
     if (len(evenElements) >= 4):
         for i in range(len(evenElements)):
             if counter == 2:
-                if n >= 10:
-                    document.write(f"\t公司名稱: {evenElements[i].text}\n")
-                    counter -= 1
-                else:
-                    document.write(f"\t公司名稱: {evenElements[i].text}\n")
-                    counter -= 1
+                document.write(f"    公司名稱: {evenElements[i].text}\n")
+                counter -= 1               
             elif counter == 1:
                 if n >= 10:
-                    document.write(f"\t審核日期: {evenElements[i].text}\n\n")
-                    counter -= 1
-                else:
-                    document.write(f"\t審核日期: {evenElements[i].text}\n\n")
+                    document.write(f"    審核日期: {evenElements[i].text}\n\n")
                     counter -= 1
             elif regularExpression(evenElements[i].text):
                 if check(evenElements[i].text):
