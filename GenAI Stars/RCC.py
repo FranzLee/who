@@ -19,7 +19,8 @@ document = open('RCC.txt', 'w', encoding='utf8')
 
 driver = webdriver.Chrome()
 driver.get("https://mops.twse.com.tw/mops/web/t164sb03")
-document.write(f"資料抓取時間: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n\n")
+document.write(f"資料抓取時間: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n")
+document.write("單位: 新台幣仟元\n\n")
 for k in range(len(searchCompany)):
     document.write(f"公司代碼: {searchCompany[k]}\n")
     textInput = driver.find_element("id", "co_id")
