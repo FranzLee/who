@@ -45,7 +45,7 @@ for k in range(len(searchCompany)):
                             money = elements[i].text
                         elif counter == 1:
                             percentage = elements[i].text
-                            document.write(f"{searchYear[j]}年 第{searchSeason[m]}季\n金額: {money}\n百分比: {percentage}\n\n")
+                            document.write(f"{searchYear[j]}年 第{searchSeason[m]}季\n金額: {money}\n百分比: {percentage}%\n\n")
                         counter -= 1
                     if elements[i].text == "合約負債－流動":
                         print(f"Start from {i}")
