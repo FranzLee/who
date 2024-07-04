@@ -6,11 +6,9 @@ from selenium.webdriver.support.select import Select
 currentYear = int(time.strftime("%Y")) - 1911
 searchCompany = ["6152"]
 searchYear = [currentYear-1, currentYear]
-# searchYear = [109]
 searchSeason = [1, 2, 3, 4]
 data_list = []
 counter = 0
-percentage = 0
 money = 0
 document = open('RCC.txt', 'w', encoding='utf8')
 
@@ -37,16 +35,12 @@ for k in range(len(searchCompany)):
             print(len(elements))
             if len(elements) >= 90:
                 for i in range(40, len(elements)):
-                    if counter > 0:
-                        if counter == 2:
-                            money = elements[i].text
-                        elif counter == 1:
-                            percentage = elements[i].text
-                            document.write(f"{searchYear[j]}年 第{searchSeason[m]}季\n金額: {money}\n百分比: {percentage}%\n\n")
-                        counter -= 1
+                    for i in range(40, len(elements)):
                     if elements[i].text == "合約負債－流動":
                         print(f"Start from {i}")
                         counter = 2
+                        money = elements[i+1].text
+                        document.write(f"{searchYear[j]}年 第{searchSeason[m]}季\n金額: {money}\n\n")
             else:
                 print(f"Warning: Expected at least 90 elements, but got {len(elements)}")
         year.clear()
