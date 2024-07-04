@@ -7,8 +7,9 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+currentYear = int(time.strftime("%Y")) - 1911
 searchCompany = ["6152"]
-searchYear = [112, 113]
+searchYear = [currentYear-1, currentYear]
 # searchYear = [109]
 searchSeason = [1, 2, 3, 4]
 data_list = []
