@@ -7,7 +7,6 @@ import re
 data_list = []
 companiesCode = []
 market = [0, 1, 2, 3]
-# market = [0]
 counter = 0
 document = open("employee-stock-subscription.txt", "w", encoding="utf8")
 n = 1
