@@ -1,11 +1,7 @@
-import json
-import urllib.request as req
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support.select import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 currentYear = int(time.strftime("%Y")) - 1911
 searchCompany = ["6152"]
