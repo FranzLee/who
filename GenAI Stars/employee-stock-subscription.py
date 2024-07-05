@@ -11,7 +11,7 @@ counter = 0
 document = open("employee-stock-subscription.txt", "w", encoding="utf8")
 n = 1
 year = int(time.strftime("%Y")) - 1911
-document.write(f"資料抓取時間: {time.strftime(\"%Y-%m-%d %H:%M:%S\", time.localtime())}\n\n")
+document.write(f"資料抓取時間: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n\n")
 print(year) 
 def regularExpression(txt):
     arr = re.findall("^\d{4}", txt)
