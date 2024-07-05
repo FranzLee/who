@@ -16,7 +16,7 @@ money = 0
 document = open('revenue.txt', 'w', encoding='utf8')
 driver = webdriver.Chrome()
 driver.get("https://mops.twse.com.tw/mops/web/t05st10_ifrs")
-document.write(f"資料抓取時間: {time.strftime(\"%Y-%m-%d %H:%M:%S\", time.localtime())}\n")
+document.write(f"資料抓取時間: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n")
 document.write("單位: 新台幣仟元\n\n")
 for k in range(len(searchCompany)):
     document.write(f"公司代號 {searchCompany[k]}:\n")
